@@ -1,0 +1,200 @@
+/* Basic Reset and Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.cv-container {
+    max-width: 900px;
+    margin: 30px auto;
+    display: flex;
+    /* Enables two-column layout */
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------- */
+/* LEFT SIDEBAR (DARK COLUMN) */
+/* ----------------------------------- */
+.sidebar {
+    width: 35%;
+    background-color: #1a2a3a;
+    /* Dark background color (Navy/Dark Gray) */
+    color: #ffffff;
+    padding: 30px 25px;
+}
+
+.name-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-pic-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: #556070;
+    /* Placeholder color for the image */
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 4px solid #fff;
+    /* To add an image: replace the background-color and uncomment background-image */
+    /* background-image: url('URL_TO_YOUR_IMAGE'); */
+    background-size: cover;
+}
+
+.sidebar h1 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.sidebar .title {
+    font-size: 0.9em;
+    color: #8fa0b0;
+    /* Lighter text for the title */
+    margin-top: 0;
+}
+
+.sidebar h2 {
+    font-size: 1.1em;
+    color: #ffffff;
+    border-bottom: 2px solid #556070;
+    /* Darker line separator */
+    padding-bottom: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contact Styling */
+.contact-item {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-item .icon {
+    margin-right: 10px;
+    font-size: 1em;
+    color: #8fa0b0;
+}
+
+/* Clickable Links (Buttons) in Sidebar */
+.clickable-link {
+    color: #4fa8e0;
+    /* Bright Blue for the clickable links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.clickable-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Skills and Languages Lists */
+.sidebar ul {
+    list-style-type: none;
+    /* Remove bullet points */
+    padding-left: 0;
+    font-size: 0.9em;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.sidebar li::before {
+    content: "•";
+    /* Custom bullet point */
+    color: #4fa8e0;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* ----------------------------------- */
+/* MAIN CONTENT (WHITE COLUMN) */
+/* ----------------------------------- */
+.main-content {
+    width: 65%;
+    padding: 30px 40px;
+    background-color: #fff;
+    color: #333;
+}
+
+.main-content h2 {
+    font-size: 1.4em;
+    color: #222;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.objective-title {
+    font-size: 1.1em;
+    color: #444;
+    margin-top: 25px;
+}
+
+/* Experience Section */
+.experience-item,
+.education-item {
+    margin-bottom: 20px;
+}
+
+.main-content h3 {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.company-date,
+.university-date {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.main-content ul {
+    list-style: disc;
+    /* Standard bullet points */
+    padding-left: 20px;
+    font-size: 0.95em;
+}
+
+/* Print Optimization */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+    }
+
+    .cv-container {
+        box-shadow: none;
+        margin: 0;
+        width: 100%;
+        max-width: none;
+        border: none;
+    }
+
+    .sidebar {
+        /* Keep dark background for visual appeal even in print */
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+}
