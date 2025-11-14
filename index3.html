@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdallah Al-Sarrawi - CV</title>
+
+    <style>
+        /* Basic Reset and Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.3;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .cv-container {
+            max-width: 950px;
+            margin: 15px auto;
+            display: flex;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            min-height: 1100px;
+            /* تحديد ارتفاع A4 */
+        }
+
+        /* Download Button Styling */
+        .download-container {
+            max-width: 950px;
+            margin: 15px auto 5px;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        .download-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 0.9em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* ----------------------------------- */
+        /* LEFT SIDEBAR (DARK COLUMN) */
+        /* ----------------------------------- */
+        .sidebar {
+            width: 35%;
+            background-color: #1a2a3a;
+            color: #ffffff;
+            padding: 20px 15px;
+        }
+
+        .name-section {
+            margin-bottom: 15px;
+        }
+
+        .profile-pic-placeholder {
+            width: 90px;
+            height: 90px;
+            background-color: #556070;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            border: 3px solid #fff;
+        }
+
+        .sidebar h1 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .sidebar .title {
+            font-size: 0.8em;
+            color: #8fa0b0;
+            margin-top: 0;
+        }
+
+        .sidebar h2 {
+            font-size: 0.95em;
+            color: #ffffff;
+            border-bottom: 1px solid #556070;
+            padding-bottom: 3px;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Contact Styling */
+        .contact-item {
+            font-size: 0.8em;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .contact-item .icon {
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+
+        /* الأهم: تلوين الروابط بشكل واضح */
+        .clickable-link {
+            color: #4fa8e0;
+            text-decoration: underline;
+            /* إضافة سطر للتأكيد على أنه رابط */
+            transition: color 0.3s;
+        }
+
+        /* Lists */
+        .sidebar ul {
+            font-size: 0.8em;
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 3px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .sidebar li::before {
+            content: "•";
+            color: #4fa8e0;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+
+        /* ----------------------------------- */
+        /* MAIN CONTENT (WHITE COLUMN) */
+        /* ----------------------------------- */
+        .main-content {
+            width: 65%;
+            padding: 20px 25px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .main-content h2 {
+            font-size: 1.2em;
+            color: #222;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 3px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-content p {
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+
+        .objective-title {
+            font-size: 0.95em;
+            color: #444;
+            margin-top: 15px;
+        }
+
+        /* Experience Section */
+        .experience-item,
+        .education-item {
+            margin-bottom: 12px;
+        }
+
+        .main-content h3 {
+            font-size: 0.95em;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        .company-date,
+        .university-date {
+            font-size: 0.8em;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .main-content ul {
+            list-style: disc;
+            padding-left: 20px;
+            font-size: 0.85em;
+        }
+
+        .main-content li {
+            margin-bottom: 2px;
+        }
+
+        /* Print Optimization */
+        @media print {
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                max-width: none;
+                border: none;
+                height: 297mm;
+                overflow: hidden;
+            }
+
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .download-container {
+                display: none;
+            }
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+
+    <div class="download-container">
+        <button id="download-pdf-button" class="download-btn">
+            Download CV as PDF (Direct)
+        </button>
+        <p style="font-size: 0.7em; color: #cc0000; margin-top: 5px;">*إذا لم يعمل النص القابل للنسخ أو الروابط: اضغط
+            (Ctrl+P) ثم اختر "Save as PDF".</p>
+    </div>
+
+    <div class="cv-container" id="cv-content">
+        <div class="sidebar">
+            <div class="name-section">
+                <div class="profile-pic-placeholder"></div>
+                <h1>Abdallah Al-Sarrawi</h1>
+                <p class="title">Business Management | Android & Django Developer</p>
+            </div>
+
+            <section class="contact">
+                <h2>CONTACT</h2>
+                <div class="contact-item">
+                    <span class="icon">📍</span> Amman, Al-Bunayyat
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📱</span> +962-780025023
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📧</span> <a href="mailto:abdallahomar1992@gmail.com" target="_blank"
+                        class="clickable-link">abdallahomar1992@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">🔗</span> <a href="https://linkedin.com/in/abdallah-al-sarrawi" target="_blank"
+                        class="clickable-link">linkedin/abdallah-al-sarrawi</a>
+                </div>
+            </section>
+
+            <section class="skills">
+                <h2>SKILLS</h2>
+                <ul>
+                    <li>Android Development (Java, Kotlin)</li>
+                    <li>Web Development (Django, Python, JS)</li>
+                    <li>Database Management (SQL Server, SQLite)</li>
+                    <li>Version Control (Git, GitHub)</li>
+                    <li>Project Management Tools: Jira, Trello</li>
+                    <li>App Development Tools: Android Studio</li>
+                    <li>Business Skills: Digital Marketing, Team Management</li>
+                    <li>Problem Solving, Communication</li>
+                </ul>
+            </section>
+
+            <section class="languages">
+                <h2>LANGUAGES</h2>
+                <div class="lang-item">
+                    <p><strong>Arabic:</strong> Native</p>
+                </div>
+                <div class="lang-item">
+                    <p><strong>English:</strong> Beginner</p>
+                </div>
+            </section>
+
+            <section class="interests">
+                <h2>INTERESTS</h2>
+                <ul>
+                    <li>Exploring Android frameworks</li>
+                    <li>Contributing to open-source Django projects</li>
+                    <li>Staying updated with tech trends</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="main-content">
+            <section class="profile">
+                <h2>PROFILE</h2>
+                <p>A junior Django and intermediate Android developer passionate about building user-focused and
+                    innovative applications. Proficient in Android development using Java and Kotlin and experienced in
+                    creating dynamic web applications using Django. Additionally, a beginner in Business Administration,
+                    with a keen interest in applying management principles to tech-driven projects.</p>
+
+                <h3 class="objective-title">Objective</h3>
+                <p>Seeking an opportunity to develop my skills in both Android development and Business Administration.
+                    Aiming to contribute to innovative projects while gaining hands-on experience in both fields to
+                    bridge technology and business.</p>
+            </section>
+
+            <section class="work-experience">
+                <h2>WORK EXPERIENCE</h2>
+                <div class="experience-item">
+                    <h3>[Your Last Role Title]</h3>
+                    <p class="company-date">[Company Name] | [Start Date] - [End Date]</p>
+                    <ul>
+                        <li>[Add your achievements and duties here, focusing on results]</li>
+                        <li>[Example: Managed team tasks using Jira and Trello]</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>[Previous Role Title]</h3>
+                    <p class="company-date">[Company Name] | [Start Date] - [End Date]</p>
+                    <ul>
+                        <li>[Add your achievements and duties here]</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="education">
+                <h2>EDUCATION</h2>
+                <div class="education-item">
+                    <h3>British Diploma in Business Administration</h3>
+                    <p class="university-date">LTUC | 2019 - 2021</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('download-pdf-button').addEventListener('click', function () {
+            const element = document.getElementById('cv-content');
+
+            // إعدادات محسّنة: إزالة الهوامش و Scale=1 لتعزيز التحويل النصي
+            const options = {
+                margin: 0,
+                filename: 'Abdallah_Al-Sarrawi_CV_Selectable.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                // استخدام Scale=1 لتعزيز تحويل النص بدلاً من الصور
+                html2canvas: { scale: 1, useCORS: true },
+                // تفعيل الروابط
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait', enableLinks: true }
+            };
+
+            // استخدام save() مباشرةً
+            html2pdf().set(options).from(element).save();
+        });
+    </script>
+</body>
+
+</html>

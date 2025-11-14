@@ -1,0 +1,186 @@
+/* Basic Reset and Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.4;
+    /* تقليل التباعد بين السطور للمساعدة في الاحتواء بصفحة واحدة */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.cv-container {
+    max-width: 950px;
+    /* زيادة عرض الـ CV قليلاً */
+    height: 1250px;
+    /* تحديد ارتفاع تقريبي لصفحة A4 (بالبكسل) */
+    margin: 15px auto;
+    /* تقليل الهامش العلوي والسفلي */
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* لمنع ظهور شريط التمرير إذا كان المحتوى على صفحة واحدة */
+}
+
+/* ----------------------------------- */
+/* Download Button Styling */
+/* ----------------------------------- */
+.download-container {
+    max-width: 950px;
+    margin: 15px auto 5px;
+    /* تقليل الهامش بين الزر والـ CV */
+    text-align: right;
+    padding-right: 20px;
+}
+
+.download-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    /* تصغير حجم الزر قليلاً */
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* ----------------------------------- */
+/* LEFT SIDEBAR (DARK COLUMN) */
+/* ----------------------------------- */
+.sidebar {
+    width: 35%;
+    background-color: #1a2a3a;
+    color: #ffffff;
+    padding: 25px 20px;
+    /* تقليل الحشو الداخلي قليلاً */
+}
+
+.name-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic-placeholder {
+    width: 100px;
+    /* تصغير حجم الصورة قليلاً */
+    height: 100px;
+    background-color: #556070;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    border: 3px solid #fff;
+}
+
+.sidebar h1 {
+    font-size: 1.6em;
+    /* تصغير الخط قليلاً */
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.sidebar .title {
+    font-size: 0.85em;
+    color: #8fa0b0;
+    margin-top: 0;
+}
+
+.sidebar h2 {
+    font-size: 1em;
+    color: #ffffff;
+    border-bottom: 1px solid #556070;
+    /* تضييق الخط الفاصل */
+    padding-bottom: 4px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contact Styling */
+.contact-item {
+    font-size: 0.85em;
+    /* تصغير الخط قليلاً */
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Clickable Links (Buttons) in Sidebar */
+.clickable-link {
+    color: #4fa8e0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Skills and Languages Lists */
+.sidebar ul {
+    font-size: 0.85em;
+}
+
+.sidebar li {
+    margin-bottom: 5px;
+}
+
+
+/* ----------------------------------- */
+/* MAIN CONTENT (WHITE COLUMN) */
+/* ----------------------------------- */
+.main-content {
+    width: 65%;
+    padding: 25px 30px;
+    /* تقليل الحشو الداخلي قليلاً */
+    background-color: #fff;
+    color: #333;
+}
+
+.main-content h2 {
+    font-size: 1.25em;
+    /* تصغير الخط قليلاً */
+    color: #222;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-content p {
+    font-size: 0.9em;
+}
+
+.main-content h3 {
+    font-size: 1em;
+    margin-bottom: 3px;
+}
+
+.company-date,
+.university-date {
+    font-size: 0.85em;
+    margin-bottom: 8px;
+}
+
+.main-content ul {
+    font-size: 0.9em;
+}
+
+/* Print Optimization */
+@media print {
+
+    /* إجبار المتصفح على عرض الـ CV كصفحة واحدة قدر الإمكان */
+    .cv-container {
+        height: auto;
+        /* إلغاء الارتفاع المحدد في الشاشة */
+        min-height: 100vh;
+    }
+
+    .download-container {
+        display: none;
+    }
+}

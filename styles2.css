@@ -1,0 +1,150 @@
+/* Basic Reset and Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    /* Light grey background for the page */
+    color: #333;
+    /* Dark text for professionalism */
+}
+
+.cv-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    /* Classic white CV background */
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography and Headings */
+h1 {
+    font-size: 2.2em;
+    color: #222;
+    /* Darker heading */
+    margin-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #444;
+    border-bottom: 2px solid #ccc;
+    /* Simple separator for sections */
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 0;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #666;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Horizontal Rule */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    /* Space between contact items */
+    margin-bottom: 15px;
+}
+
+.contact-item {
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Clickable Links (Buttons) Styling - The key for clickable links */
+.clickable-link {
+    color: #0066cc;
+    /* Classic link blue color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.clickable-link:hover {
+    color: #004499;
+    /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
+    gap: 15px 30px;
+}
+
+.skill-category p {
+    margin: 0;
+    padding-left: 0;
+}
+
+.skill-category strong {
+    color: #333;
+    display: block;
+    /* Ensures category title is on its own line */
+    margin-bottom: 5px;
+}
+
+/* Lists (Languages, Interests) */
+ul {
+    list-style: square;
+    /* Simple and professional list style */
+    padding-left: 20px;
+    margin-top: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Print/PDF Optimization (Optional, but recommended for CVs) */
+@media print {
+    body {
+        background-color: #fff;
+        padding: 0;
+    }
+
+    .cv-container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    .clickable-link {
+        /* Optional: Hide the link color when printing to save ink */
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+}
