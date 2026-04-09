@@ -32,17 +32,22 @@ body {
     margin-bottom: 30px;
 }
 
+
+
 .profile-pic-placeholder {
     width: 120px;
     height: 120px;
-    background-color: #556070;
-    /* Placeholder color for the image */
-    border-radius: 50%;
     margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden; /* مهم جدا */
     border: 4px solid #fff;
-    /* To add an image: replace the background-color and uncomment background-image */
-    /* background-image: url('URL_TO_YOUR_IMAGE'); */
-    background-size: cover;
+}
+
+.profile-pic-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* أهم سطر */
+    display: block;
 }
 
 .sidebar h1 {
